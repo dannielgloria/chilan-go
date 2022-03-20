@@ -5,6 +5,10 @@ import 'package:flutter/material.dart';
 import '../widgets/dialog_builders.dart';
 import '../widgets/login_functions.dart';
 
+/*Generar clases en donde se tengan definidos todos los textos de la aplicación, de acuerdo a las pantallas, con el fín de poder realizar la traducción español-ingles.
+
+Tomar como ejemplo la clase nativa de la API Animated login, llamada LoginTexts*/
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
@@ -36,9 +40,8 @@ class _LoginScreenState extends State<LoginScreen> {
       loginTexts: _loginTexts,
       changeLanguageCallback: (LanguageOption? _language) {
         if (_language != null) {
-          DialogBuilder(context).showResultDialog(language.code == 'ES'
-              ? 'Cambio de idioma con éxito a:'
-              : 'Successfully changed the language to: ${_language.value}.');
+          DialogBuilder(context).showResultDialog(
+              'Successfully changed the language to: ${_language.value}.');
           if (mounted) setState(() => language = _language);
         }
       },
@@ -125,18 +128,74 @@ class _LoginScreenState extends State<LoginScreen> {
 
   LoginTexts get _loginTexts => LoginTexts(
         nameHint: _username,
+        emailHint: _emailHint,
+        passwordHint: _passwordHint,
+        confirmPasswordHint: _confirmPasswordHint,
         login: _login,
         signUp: _signup,
+        welcomeBack: _welcomeBack,
+        welcomeBackDescription: _welcomeBackDescription,
+        welcome: _welcome,
+        welcomeDescription: _welcomeDescription,
+        signUpFormTitle: _signUpFormTitle,
+        signUpUseEmail: _signUpUseEmail,
+        loginFormTitle: _loginFormTitle,
+        loginUseEmail: _loginUseEmail,
+        forgotPassword: _forgotPassword,
+        notHaveAnAccount: _notHaveAnAccount,
+        alreadyHaveAnAccount: _alreadyHaveAnAccount,
       );
 
   /// You can adjust the texts in the screen according to the current language
-  /// With the help of [LoginTexts], you can create a multilanguage scren.
+  /// With the help of [LoginTexts], you can create a multilanguage screen.
   String get _username =>
       language.code == 'ES' ? 'Nombre de usuario' : 'Username';
 
   String get _login => language.code == 'ES' ? 'Inicio' : 'Login';
 
   String get _signup => language.code == 'ES' ? 'Registro' : 'Sign Up';
+
+  String get _emailHint => language.code == 'ES' ? 'Correo' : 'Email';
+
+  String get _passwordHint => language.code == 'ES' ? 'Contraseña' : 'Password';
+
+  String get _confirmPasswordHint =>
+      language.code == 'ES' ? 'Confirmar contraseña' : 'Confirm password';
+
+  String get _welcomeBack =>
+      language.code == 'ES' ? '¡Hola explorador!' : 'Welcome back explorer!';
+
+  String get _welcomeBackDescription => language.code == 'ES'
+      ? 'Continuemos con tu camino para convertirte en\n¡el mejor explorador de la CDMX!'
+      : 'Let\'s continue on your way to become in the best explorer in CDMX!';
+  String get _signUpFormTitle =>
+      language.code == 'ES' ? 'titulo registro' : '_signUpFormTitle';
+
+  String get _signUpUseEmail => language.code == 'ES'
+      ? 'o usa tu correo para registrarte'
+      : 'or use your email account';
+
+  String get _loginFormTitle =>
+      language.code == 'ES' ? 'titulo login' : '_signUpFormTitle';
+
+  String get _loginUseEmail => language.code == 'ES'
+      ? 'o inicia sesión con tu correo'
+      : 'or use your email for registration';
+
+  String get _forgotPassword =>
+      language.code == 'ES' ? '¿Olvidaste tu contraseña?' : 'Forgot password?';
+
+  String get _notHaveAnAccount =>
+      language.code == 'ES' ? '¿Aún no tienes cuenta?' : 'Not have an account?';
+
+  String get _alreadyHaveAnAccount =>
+      language.code == 'ES' ? '¿Ya tienes cuenta?' : 'Already have an account?';
+
+  String get _welcome =>
+      language.code == 'ES' ? '¡Bienvenido explorador!' : 'Welcome explorer!';
+  String get _welcomeDescription => language.code == 'ES'
+      ? '¿Estás listo para iniciar tu aventura por la CDMX?'
+      : 'Are you ready for start your adventure in CDMX';
 
   /// Social login options, you should provide callback function and icon path.
   /// Icon paths should be the full path in the assets
@@ -156,9 +215,8 @@ class _LoginScreenState extends State<LoginScreen> {
         LoginFunctions(context).socialLogin(type));
     final String? res = await _operation?.valueOrCancellation();
     if (_operation?.isCompleted == true && res == null) {
-      DialogBuilder(context).showResultDialog(language.code == 'ES'
-          ? 'Inicio de sesión exitoso con $type.'
-          : 'Successfully logged in with $type.');
+      DialogBuilder(context)
+          .showResultDialog('Successfully logged in with $type.');
     }
     return res;
   }
