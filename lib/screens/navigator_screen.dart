@@ -1,5 +1,6 @@
 import 'package:app/screens/home_screen.dart';
 import 'package:app/screens/notifications_screen.dart';
+import 'package:app/screens/places_screen.dart';
 import 'package:app/screens/profile_screen.dart';
 import 'package:app/screens/qr_scanner_screen.dart';
 import 'package:app/style/my_colors.dart';
@@ -19,6 +20,7 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
   //Arreglo de vistas
   final List<Widget> screensArray = [
     const HomePage(),
+    const PlacesScreen(),
     const QrScanner(),
     const NotificationsScreen(),
     const ProfileScreen(),
@@ -30,14 +32,21 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
         backgroundColor: indexTap == 0
             ? MyColors.pink
             : indexTap == 1
-                ? Colors.black
+                ? MyColors.white
                 : indexTap == 2
-                    ? MyColors.green
-                    : MyColors.orange,
+                    ? Colors.black
+                    : indexTap == 3
+                        ? MyColors.white
+                        : MyColors.orange,
         color: MyColors.blue,
         items: <Widget>[
           Icon(
             Icons.home,
+            size: 30,
+            color: MyColors.white,
+          ),
+          Icon(
+            Icons.place,
             size: 30,
             color: MyColors.white,
           ),

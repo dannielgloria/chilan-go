@@ -1,3 +1,5 @@
+import 'package:app/screens/navigator_screen.dart';
+import 'package:app/style/my_colors.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -13,7 +15,7 @@ class WelcomeScreen extends StatelessWidget {
     );
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(primaryColor: MyColors.blue),
       home: OnBoardingPage(),
     );
   }
@@ -29,7 +31,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
 
   void _onIntroEnd(context) {
     Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => WelcomeScreen()),
+      MaterialPageRoute(builder: (_) => NavigatorScreen()),
     );
   }
 
@@ -45,13 +47,13 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
       bodyTextStyle: bodyStyle,
       bodyPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
-      pageColor: Colors.white,
+      pageColor: MyColors.white,
       imagePadding: EdgeInsets.zero,
     );
 
     return IntroductionScreen(
       key: introKey,
-      globalBackgroundColor: Colors.white,
+      globalBackgroundColor: MyColors.white,
       // globalHeader: const Align(
       //   alignment: Alignment.topRight,
       //   child: SafeArea(
@@ -60,13 +62,17 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       //         child: Icon(Icons.arrow_back_ios_rounded)),
       //   ),
       // ),
-      globalFooter: SizedBox(
+      globalFooter: Container(
+        color: MyColors.blue,
         width: double.infinity,
         height: 60,
-        child: ElevatedButton(
+        child: TextButton(
           child: const Text(
             '¡Vamos ahora mismo!',
-            style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+            style: TextStyle(
+                fontSize: 16.0,
+                fontWeight: FontWeight.bold,
+                color: MyColors.white),
           ),
           onPressed: () => _onIntroEnd(context),
         ),
@@ -119,11 +125,24 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       nextFlex: 0,
       showBackButton: true,
       //rtl: true, // Display as right-to-left
-      back: const Icon(Icons.arrow_back_ios_rounded),
-      skip: const Text('Skip', style: TextStyle(fontWeight: FontWeight.w600)),
-      next: const Icon(Icons.arrow_forward_ios_rounded),
-      done:
-          const Text('¡LISTO!', style: TextStyle(fontWeight: FontWeight.w600)),
+      back: const Icon(
+        Icons.arrow_back_ios_rounded,
+        color: MyColors.blue,
+      ),
+      skip: const Text('Skip',
+          style: TextStyle(
+            fontWeight: FontWeight.w600,
+            color: MyColors.blue,
+          )),
+      next: const Icon(
+        Icons.arrow_forward_ios_rounded,
+        color: MyColors.blue,
+      ),
+      done: const Text('¡LISTO!',
+          style: TextStyle(
+            fontWeight: FontWeight.w600,
+            color: MyColors.blue,
+          )),
       curve: Curves.fastLinearToSlowEaseIn,
       controlsMargin: const EdgeInsets.all(16),
       controlsPadding: kIsWeb
@@ -131,14 +150,14 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           : const EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 4.0),
       dotsDecorator: const DotsDecorator(
         size: Size(10.0, 10.0),
-        color: Color(0xFFBDBDBD),
+        color: MyColors.white,
         activeSize: Size(22.0, 10.0),
         activeShape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(25.0)),
         ),
       ),
       dotsContainerDecorator: const ShapeDecoration(
-        color: Colors.black87,
+        color: MyColors.green,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(25.0)),
         ),
