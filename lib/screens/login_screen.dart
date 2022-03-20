@@ -1,4 +1,5 @@
 import 'package:animated_login/animated_login.dart';
+import 'package:app/style/my_colors.dart';
 import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 
@@ -27,11 +28,13 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return AnimatedLogin(
       onLogin: (LoginData data) async =>
-          _authOperation(LoginFunctions(context).onLogin(data)),
+          _authOperation(LoginFunctions(context).onLogin(data), 'login'),
       onSignup: (SignUpData data) async =>
-          _authOperation(LoginFunctions(context).onSignup(data)),
+          _authOperation(LoginFunctions(context).onSignup(data), 'signup'),
       onForgotPassword: _onForgotPassword,
-      logo: Image.asset('assets/images/logo_example.png'),
+      logo: Image.asset(
+        'assets/images/vector_hackaton_1.png',
+      ),
       // backgroundImage: 'images/background_image.jpg',
       signUpMode: SignUpModes.both,
       socialLogins: _socialLogins(context),
@@ -40,8 +43,9 @@ class _LoginScreenState extends State<LoginScreen> {
       loginTexts: _loginTexts,
       changeLanguageCallback: (LanguageOption? _language) {
         if (_language != null) {
-          DialogBuilder(context).showResultDialog(
-              'Successfully changed the language to: ${_language.value}.');
+          DialogBuilder(context).showResultDialog(language.code == 'ES'
+              ? 'Successfully changed the language to: ${_language.value}.'
+              : 'Lenguaje cambiado con éxito a: ${_language.value}.');
           if (mounted) setState(() => language = _language);
         }
       },
@@ -56,12 +60,19 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Future<String?> _authOperation(Future<String?> func) async {
+  Future<String?> _authOperation(
+      Future<String?> func, String sesionType) async {
     await _operation?.cancel();
     _operation = CancelableOperation.fromFuture(func);
     final String? res = await _operation?.valueOrCancellation();
     if (_operation?.isCompleted == true) {
-      DialogBuilder(context).showResultDialog(res ?? 'Successful.');
+      DialogBuilder(context).showResultDialog(res ?? 'Successful');
+      if (sesionType == 'signup') {
+        Navigator.pushNamed(context, '/welcome');
+      }
+      if (sesionType == 'login') {
+        Navigator.pushNamed(context, '/home');
+      }
     }
     return res;
   }
@@ -96,8 +107,8 @@ class _LoginScreenState extends State<LoginScreen> {
           languageDialogTheme: LanguageDialogTheme(
               optionMargin: EdgeInsets.symmetric(horizontal: 80)),
         ),
-        loadingSocialButtonColor: Colors.blue,
-        loadingButtonColor: Colors.white,
+        loadingSocialButtonColor: MyColors.pink,
+        loadingButtonColor: MyColors.white,
       );
 
   /// You can adjust the colors, text styles, button styles, borders
@@ -105,8 +116,8 @@ class _LoginScreenState extends State<LoginScreen> {
   /// You can also set some additional display options such as [showLabelTexts].
   LoginViewTheme get _mobileTheme => LoginViewTheme(
         // showLabelTexts: false,
-        backgroundColor: Colors.blue, // const Color(0xFF6666FF),
-        formFieldBackgroundColor: Colors.white,
+        backgroundColor: MyColors.pink, // const Color(0xFF6666FF),
+        formFieldBackgroundColor: MyColors.white,
         formWidthRatio: 60,
         // actionButtonStyle: ButtonStyle(
         //   foregroundColor: MaterialStateProperty.all(Colors.blue),
@@ -145,6 +156,8 @@ class _LoginScreenState extends State<LoginScreen> {
         notHaveAnAccount: _notHaveAnAccount,
         alreadyHaveAnAccount: _alreadyHaveAnAccount,
         chooseLanguageTitle: _chooseLanguageTitle,
+        passwordMatchingError: _passwordMatchingError,
+        dialogButtonText: _dialogButtonText,
       );
 
   /// You can adjust the texts in the screen according to the current language
@@ -202,6 +215,13 @@ class _LoginScreenState extends State<LoginScreen> {
   String get _chooseLanguageTitle =>
       language.code == 'ES' ? 'Elije tu idioma' : 'Choose your language';
 
+  String get _passwordMatchingError => language.code == 'ES'
+      ? 'La contraseña es incorrecta, intentalo nuevamente'
+      : 'Password error, please try again';
+
+  String get _dialogButtonText =>
+      language.code == 'ES' ? '_dialogButtonText' : '_dialogButtonText';
+
   /// Social login options, you should provide callback function and icon path.
   /// Icon paths should be the full path in the assets
   /// Don't forget to also add the icon folder to the "pubspec.yaml" file.
@@ -220,8 +240,9 @@ class _LoginScreenState extends State<LoginScreen> {
         LoginFunctions(context).socialLogin(type));
     final String? res = await _operation?.valueOrCancellation();
     if (_operation?.isCompleted == true && res == null) {
-      DialogBuilder(context)
-          .showResultDialog('Successfully logged in with $type.');
+      DialogBuilder(context).showResultDialog(language.code == 'ES'
+          ? 'Inicio de sesión exitoso con $type.'
+          : 'Successfully logged in with $type.');
     }
     return res;
   }

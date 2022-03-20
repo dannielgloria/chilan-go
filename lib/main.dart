@@ -1,7 +1,10 @@
 import 'package:app/screens/forgot_password_screen.dart';
+import 'package:app/screens/home_screen.dart';
 import 'package:app/screens/login_screen.dart';
 import 'package:app/screens/welcome_screen.dart';
+import 'package:app/style/my_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 /// Main function.
 void main() {
@@ -18,13 +21,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Animated Login',
       theme: ThemeData(
-          primarySwatch: Colors.blue), //const MaterialColor(0xFF6666FF, color)
+          fontFamily: GoogleFonts.lato().fontFamily,
+          primaryColor: MyColors.blue),
       debugShowCheckedModeBanner: false,
-      initialRoute: '/welcome',
+      initialRoute: '/login',
       routes: {
         '/login': (BuildContext context) => const LoginScreen(),
         '/forgotPass': (BuildContext context) => const ForgotPasswordScreen(),
         '/welcome': (BuildContext context) => const WelcomeScreen(),
+        '/home': (BuildContext context) => const HomePage(),
       },
     );
   }
