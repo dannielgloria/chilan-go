@@ -73,7 +73,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   static List<LanguageOption> get _languageOptions => const <LanguageOption>[
         LanguageOption(
-          value: 'Spanish',
+          value: 'Español',
           code: 'ES',
           iconPath: 'assets/icons/es.png',
         ),
@@ -144,6 +144,7 @@ class _LoginScreenState extends State<LoginScreen> {
         forgotPassword: _forgotPassword,
         notHaveAnAccount: _notHaveAnAccount,
         alreadyHaveAnAccount: _alreadyHaveAnAccount,
+        chooseLanguageTitle: _chooseLanguageTitle,
       );
 
   /// You can adjust the texts in the screen according to the current language
@@ -193,9 +194,13 @@ class _LoginScreenState extends State<LoginScreen> {
 
   String get _welcome =>
       language.code == 'ES' ? '¡Bienvenido explorador!' : 'Welcome explorer!';
+
   String get _welcomeDescription => language.code == 'ES'
       ? '¿Estás listo para iniciar tu aventura por la CDMX?'
       : 'Are you ready for start your adventure in CDMX';
+
+  String get _chooseLanguageTitle =>
+      language.code == 'ES' ? 'Elije tu idioma' : 'Choose your language';
 
   /// Social login options, you should provide callback function and icon path.
   /// Icon paths should be the full path in the assets
