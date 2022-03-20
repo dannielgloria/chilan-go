@@ -36,6 +36,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_login: ^3.2.0
   animated_login: ^1.5.1
+  curved_navigation_bar: ^1.0.3 #latest version
+  introduction_screen: ^3.0.0
 
 dev_dependencies:
   flutter_test:
