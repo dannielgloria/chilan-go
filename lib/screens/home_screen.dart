@@ -1,4 +1,5 @@
 import 'package:app/style/my_colors.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -162,8 +163,8 @@ class HomePage extends StatelessWidget {
           ),
           /*Avatar*/
           Container(
-            margin: EdgeInsets.all(10),
-            height: size.height * 0.3,
+            margin: EdgeInsets.all(20),
+            height: size.height * 0.25,
             child: Image.asset('assets/images/ajolote.png'),
           ),
         ],

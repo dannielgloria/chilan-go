@@ -71,7 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
         Navigator.pushNamed(context, '/welcome');
       }
       if (sesionType == 'login') {
-        Navigator.pushNamed(context, '/home');
+        Navigator.pushNamed(context, '/navigatorScreen');
       }
     }
     return res;

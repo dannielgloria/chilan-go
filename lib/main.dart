@@ -1,6 +1,8 @@
 import 'package:app/screens/forgot_password_screen.dart';
 import 'package:app/screens/home_screen.dart';
 import 'package:app/screens/login_screen.dart';
+import 'package:app/screens/navigator_screen.dart';
+import 'package:app/screens/qr_scanner_screen.dart';
 import 'package:app/screens/welcome_screen.dart';
 import 'package:app/style/my_colors.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +32,8 @@ class MyApp extends StatelessWidget {
         '/forgotPass': (BuildContext context) => const ForgotPasswordScreen(),
         '/welcome': (BuildContext context) => const WelcomeScreen(),
         '/home': (BuildContext context) => const HomePage(),
+        '/qrScanner': (BuildContext context) => const QrScanner(),
+        '/navigatorScreen': (BuildContext context) => const NavigatorScreen(),
       },
     );
   }

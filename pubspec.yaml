@@ -39,6 +39,8 @@ dependencies:
   curved_navigation_bar: ^1.0.3 #latest version
   introduction_screen: ^3.0.0
   google_fonts: ^2.3.1
+  mobile_scanner: ^1.0.0
+  image_picker: ^0.8.4+11
 
 dev_dependencies:
   flutter_test:
