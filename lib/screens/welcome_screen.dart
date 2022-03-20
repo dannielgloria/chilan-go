@@ -12,7 +12,6 @@ class WelcomeScreen extends StatelessWidget {
       SystemUiOverlayStyle.dark.copyWith(statusBarColor: Colors.transparent),
     );
     return MaterialApp(
-      title: 'Introduction screen',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
       home: OnBoardingPage(),
@@ -31,16 +30,6 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   void _onIntroEnd(context) {
     Navigator.of(context).push(
       MaterialPageRoute(builder: (_) => WelcomeScreen()),
-    );
-  }
-
-  Widget _buildFullscreenImage() {
-    return Image.asset(
-      'assets/fullscreen.jpg',
-      fit: BoxFit.cover,
-      height: double.infinity,
-      width: double.infinity,
-      alignment: Alignment.center,
     );
   }
 
@@ -63,21 +52,20 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
     return IntroductionScreen(
       key: introKey,
       globalBackgroundColor: Colors.white,
-      globalHeader: Align(
-        alignment: Alignment.topRight,
-        child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.only(top: 16, right: 16),
-            child: _buildImage('flutter.png', 100),
-          ),
-        ),
-      ),
+      // globalHeader: const Align(
+      //   alignment: Alignment.topRight,
+      //   child: SafeArea(
+      //     child: Padding(
+      //         padding: EdgeInsets.only(top: 16, right: 16),
+      //         child: Icon(Icons.arrow_back_ios_rounded)),
+      //   ),
+      // ),
       globalFooter: SizedBox(
         width: double.infinity,
         height: 60,
         child: ElevatedButton(
           child: const Text(
-            'Let\'s go right away!',
+            '¡Vamos ahora mismo!',
             style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
           ),
           onPressed: () => _onIntroEnd(context),
@@ -85,76 +73,42 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       ),
       pages: [
         PageViewModel(
-          title: "Fractional shares",
+          title: "¡Bienvenido!",
           body:
-              "Instead of having to buy an entire share, invest any amount you want.",
-          image: _buildImage('img1.jpg'),
+              "Te damos la bienvenida a Chilan-Go tu aplicacion para explorar la CDMX",
+          image: _buildImage('images/welcome_one.gif'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Learn as you go",
-          body:
-              "Download the Stockpile app and master the market with our mini-lesson.",
-          image: _buildImage('img2.jpg'),
+          title: "Explora",
+          body: "Descubre los lugares que nosotros te recomendamos",
+          image: _buildImage('images/welcome_two.gif'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Kids and teens",
-          body:
-              "Kids and teens can track their stocks 24/7 and place trades that you approve.",
-          image: _buildImage('img3.jpg'),
+          title: "Busca",
+          body: "Escanea los códigos Qr que se encuentran en cada lugar",
+          image: _buildImage('images/welcome_three.gif'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Full Screen Page",
+          title: "Sube de nivel",
           body:
-              "Pages can be full screen as well.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id euismod lectus, non tempor felis. Nam rutrum rhoncus est ac venenatis.",
-          image: _buildFullscreenImage(),
-          decoration: pageDecoration.copyWith(
-            contentMargin: const EdgeInsets.symmetric(horizontal: 16),
-            fullScreen: true,
-            bodyFlex: 2,
-            imageFlex: 3,
-          ),
-        ),
-        PageViewModel(
-          title: "Another title page",
-          body: "Another beautiful body text for this example onboarding",
-          image: _buildImage('img2.jpg'),
-          footer: ElevatedButton(
-            onPressed: () {
-              introKey.currentState?.animateScroll(0);
-            },
-            child: const Text(
-              'FooButton',
-              style: TextStyle(color: Colors.white),
-            ),
-            style: ElevatedButton.styleFrom(
-              primary: Colors.lightBlue,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.0),
-              ),
-            ),
-          ),
+              "Cada vez que escanees un código Qr obtendrás puntos para subir de nivel",
+          image: _buildImage('images/welcome_four.gif'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Title of last page - reversed",
-          bodyWidget: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Text("Click on ", style: bodyStyle),
-              Icon(Icons.edit),
-              Text(" to edit a post", style: bodyStyle),
-            ],
-          ),
+          title: "Seras recompensado",
+          body:
+              "Recuerda que cuanto más uses la aplicación, más beneficios obtendrás",
           decoration: pageDecoration.copyWith(
             bodyFlex: 2,
             imageFlex: 4,
             bodyAlignment: Alignment.bottomCenter,
             imageAlignment: Alignment.topCenter,
           ),
-          image: _buildImage('img1.jpg'),
+          image: _buildImage('images/welcome_five.gif'),
           reverse: true,
         ),
       ],
@@ -165,10 +119,11 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       nextFlex: 0,
       showBackButton: true,
       //rtl: true, // Display as right-to-left
-      back: const Icon(Icons.arrow_back),
+      back: const Icon(Icons.arrow_back_ios_rounded),
       skip: const Text('Skip', style: TextStyle(fontWeight: FontWeight.w600)),
-      next: const Icon(Icons.arrow_forward),
-      done: const Text('Done', style: TextStyle(fontWeight: FontWeight.w600)),
+      next: const Icon(Icons.arrow_forward_ios_rounded),
+      done:
+          const Text('¡LISTO!', style: TextStyle(fontWeight: FontWeight.w600)),
       curve: Curves.fastLinearToSlowEaseIn,
       controlsMargin: const EdgeInsets.all(16),
       controlsPadding: kIsWeb
@@ -185,7 +140,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       dotsContainerDecorator: const ShapeDecoration(
         color: Colors.black87,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+          borderRadius: BorderRadius.all(Radius.circular(25.0)),
         ),
       ),
     );
