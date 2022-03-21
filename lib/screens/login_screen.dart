@@ -107,7 +107,7 @@ class _LoginScreenState extends State<LoginScreen> {
           languageDialogTheme: LanguageDialogTheme(
               optionMargin: EdgeInsets.symmetric(horizontal: 80)),
         ),
-        loadingSocialButtonColor: MyColors.pink,
+        loadingSocialButtonColor: MyColors.mainBlue,
         loadingButtonColor: MyColors.white,
       );
 
@@ -116,7 +116,7 @@ class _LoginScreenState extends State<LoginScreen> {
   /// You can also set some additional display options such as [showLabelTexts].
   LoginViewTheme get _mobileTheme => LoginViewTheme(
         // showLabelTexts: false,
-        backgroundColor: MyColors.pink, // const Color(0xFF6666FF),
+        backgroundColor: MyColors.mainBlue, // const Color(0xFF6666FF),
         formFieldBackgroundColor: MyColors.white,
         formWidthRatio: 60,
         // actionButtonStyle: ButtonStyle(

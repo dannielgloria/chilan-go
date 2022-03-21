@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
     var size = MediaQuery.of(context).size;
 
     return Container(
-      color: MyColors.pink,
+      color: MyColors.background,
       child: Column(
         //mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
@@ -47,7 +47,7 @@ class HomePage extends StatelessWidget {
             child: Text(
               "Joss",
               style: TextStyle(
-                color: MyColors.white,
+                color: MyColors.mainText,
                 fontSize: 28,
                 fontFamily:
                     GoogleFonts.lato(fontWeight: FontWeight.bold).fontFamily,
@@ -62,7 +62,7 @@ class HomePage extends StatelessWidget {
             child: Text(
               "Rango: Garibaldi",
               style: TextStyle(
-                color: MyColors.white,
+                color: MyColors.mainText,
                 fontSize: 22,
                 fontFamily: GoogleFonts.lato().fontFamily,
                 decoration: TextDecoration.none,

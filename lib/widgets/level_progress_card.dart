@@ -16,15 +16,23 @@ class LevelProgressCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: Colors.grey.shade700.withAlpha(200),
-          borderRadius: BorderRadius.circular(50)),
+          color: MyColors.cardBg,
+          borderRadius: BorderRadius.circular(60),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5),
+              spreadRadius: 5,
+              blurRadius: 7,
+              offset: const Offset(0, 2),
+            )
+          ]),
       width: size.width * 0.8,
       height: 120,
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       child: Column(
         children: [
           Container(
-            margin: EdgeInsets.only(top: 10),
+            margin: const EdgeInsets.only(top: 10),
             //color: Colors.orange,
             child: Text(
               "Nivel $lv",
@@ -41,7 +49,7 @@ class LevelProgressCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 10),
+                  margin: const EdgeInsets.symmetric(horizontal: 10),
                   child: Image.asset(
                     "assets/icons/passport.png",
                     scale: 1.5,
@@ -55,7 +63,7 @@ class LevelProgressCard extends StatelessWidget {
                       height: 15,
                     ),
                     Container(
-                      color: Colors.grey.shade900,
+                      color: const Color(0XFF7c7c7c),
                       width: 40,
                       height: 15,
                     ),

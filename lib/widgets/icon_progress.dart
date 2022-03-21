@@ -21,7 +21,7 @@ class IconProgress extends StatelessWidget {
           child: Text(
             value,
             style: TextStyle(
-              color: MyColors.white,
+              color: MyColors.mainText,
               fontSize: 22,
               fontFamily: GoogleFonts.lato().fontFamily,
               decoration: TextDecoration.none,

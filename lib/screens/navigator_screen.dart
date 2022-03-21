@@ -30,7 +30,7 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
     return Scaffold(
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: indexTap == 0
-            ? MyColors.pink
+            ? MyColors.background
             : indexTap == 1
                 ? MyColors.white
                 : indexTap == 2
@@ -38,31 +38,31 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
                     : indexTap == 3
                         ? MyColors.white
                         : MyColors.orange,
-        color: MyColors.blue,
+        color: MyColors.mainBlue,
         items: <Widget>[
           Icon(
             Icons.home,
-            size: 30,
+            size: 35,
             color: MyColors.white,
           ),
           Icon(
             Icons.place,
-            size: 30,
+            size: 35,
             color: MyColors.white,
           ),
           Icon(
             Icons.qr_code_scanner,
-            size: 30,
+            size: 35,
             color: MyColors.white,
           ),
           Icon(
             Icons.notifications,
-            size: 30,
+            size: 35,
             color: MyColors.white,
           ),
           Icon(
             Icons.person,
-            size: 30,
+            size: 35,
             color: MyColors.white,
           ),
         ],
