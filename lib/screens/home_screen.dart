@@ -74,7 +74,7 @@ class HomePage extends StatelessWidget {
             margin: EdgeInsets.all(20),
             height: size.height * 0.3,
             child: Image.asset(
-              'assets/images/ajolote.png',
+              'assets/images/ajolote.gif',
             ),
           ),
         ],

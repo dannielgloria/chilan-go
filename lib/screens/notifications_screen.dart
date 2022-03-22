@@ -61,15 +61,15 @@ class NotificationCard extends StatelessWidget {
           width: 1,
         ),
       ),
-      padding: const EdgeInsets.all(15.0),
+      padding: const EdgeInsets.all(20.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           CircleAvatar(
-            backgroundColor: MyColors.blue,
+            backgroundColor: MyColors.mainBlue,
             child: Image.asset(
               image,
-              fit: BoxFit.cover,
+              fit: BoxFit.fitHeight,
             ),
           ),
           Expanded(
