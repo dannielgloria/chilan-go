@@ -23,7 +23,7 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
     const PlacesScreen(),
     const QrScanner(),
     const NotificationsScreen(),
-    const ProfileScreen(),
+    ProfileScreen(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
                     ? Colors.black
                     : indexTap == 3
                         ? MyColors.white
-                        : MyColors.orange,
+                        : MyColors.white,
         color: MyColors.mainBlue,
         items: <Widget>[
           Icon(

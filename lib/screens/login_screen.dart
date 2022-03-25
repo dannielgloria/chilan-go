@@ -33,7 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
           _authOperation(LoginFunctions(context).onSignup(data), 'signup'),
       onForgotPassword: _onForgotPassword,
       logo: Image.asset(
-        'assets/images/vector_hackaton_1.png',
+        'assets/images/logo_ajolote_2.png',
       ),
       // backgroundImage: 'images/background_image.jpg',
       signUpMode: SignUpModes.both,

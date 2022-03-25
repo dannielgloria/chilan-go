@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
 
     return Container(
       color: MyColors.background,
-      child: Column(
+      child: ListView(
         //mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           /*Logros y puntaje*/
@@ -44,14 +44,16 @@ class HomePage extends StatelessWidget {
           Container(
             margin: EdgeInsets.all(30),
             //color: Colors.grey,
-            child: Text(
-              "Joss",
-              style: TextStyle(
-                color: MyColors.mainText,
-                fontSize: 28,
-                fontFamily:
-                    GoogleFonts.lato(fontWeight: FontWeight.bold).fontFamily,
-                decoration: TextDecoration.none,
+            child: Center(
+              child: Text(
+                "Joss",
+                style: TextStyle(
+                  color: MyColors.mainText,
+                  fontSize: 28,
+                  fontFamily:
+                      GoogleFonts.lato(fontWeight: FontWeight.bold).fontFamily,
+                  decoration: TextDecoration.none,
+                ),
               ),
             ),
           ),
@@ -59,13 +61,15 @@ class HomePage extends StatelessWidget {
           Container(
             margin: EdgeInsets.only(bottom: 20),
             //color: Colors.grey,
-            child: Text(
-              "Rango: Garibaldi",
-              style: TextStyle(
-                color: MyColors.mainText,
-                fontSize: 22,
-                fontFamily: GoogleFonts.lato().fontFamily,
-                decoration: TextDecoration.none,
+            child: Center(
+              child: Text(
+                "Rango: Garibaldi",
+                style: TextStyle(
+                  color: MyColors.mainText,
+                  fontSize: 22,
+                  fontFamily: GoogleFonts.lato().fontFamily,
+                  decoration: TextDecoration.none,
+                ),
               ),
             ),
           ),
