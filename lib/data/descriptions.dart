@@ -1,34 +1,40 @@
 import 'package:app/model/description.dart';
 
 class Descriptions {
-  static List<Description> allDescriptions = [
+  static List<Description> desc1 = [
     Description(
-      date: 'FEB 14th',
-      username: 'Michael Scoffield',
-      urlImage: 'assets/user1.png',
+      date: '5 puntos',
+      username: 'Sitio de interes',
+      urlImage: 'assets/icons/road.png',
       information:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+          'Callejón con arte y un santuario de la Virgen María, con rumores sobre apariciones de fantasmas.',
     ),
+  ];
+  static List<Description> desc2 = [
     Description(
-      date: 'JAN 24th',
-      username: 'Daniel Kraig',
-      urlImage: 'assets/user2.png',
+      date: '23 puntos',
+      username: 'Museo',
+      urlImage: 'assets/icons/museum.png',
       information:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+          'La Casa Azul es el Universo Íntimo de Frida Kahlo. En esta bella residencia, vivió la artista la mayor parte de su vida; inicialmente junto a su familia y años después, con Diego Rivera. Asimismo, interesantes visitantes mexicanos y extranjeros se hospedaron en este lugar, atraídos por la cautivadora pareja de artistas.',
     ),
+  ];
+  static List<Description> desc3 = [
     Description(
-      date: 'MAR 18th',
-      username: 'Amanda Linn',
-      urlImage: 'assets/user3.png',
+      date: '32 puntos',
+      username: 'Bar',
+      urlImage: 'assets/icons/beer.png',
       information:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+          'Desde que ves la fachada de “Las Duelistas” sabes que has llegado a un lugar peculiar, te reciben un calendario azteca y dos puertas negras de cantina vintage. Una vez adentro descubres que estás en un sitio casi psicodélico de la CDMX: es pequeño pero todas sus paredes forman un mural gigante, de piso a techo hay colores vibrantes (hasta en los ventiladores). ',
     ),
+  ];
+  static List<Description> desc4 = [
     Description(
-      date: 'AUG 15th',
-      username: 'Kim Wexler',
-      urlImage: 'assets/user4.png',
+      date: '10 puntos',
+      username: 'Parque',
+      urlImage: 'assets/icons/tree.png',
       information:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+          'El Jardín Pushkin recuerda al poeta ruso a través de los espacios de tranquilidad y relajación. Cuenta con bancas y juegos infantiles. De manera regular, se reúnen jóvenes para practicar sus habilidades en patineta. Además generalmente los fines de semana se realizan actividades culturales y para toda la familia. ',
     ),
   ];
 }

@@ -4,6 +4,7 @@ class MyColors {
   static const Color mainBlue = Color(0xFF4875d3);
   static const Color mainText = Color(0xFF000000);
   static const Color secondaryBlue = Color(0xFF749bde);
+  static const Color ligthBlue = Color(0xFFBBCCEF);
   static const Color background = Color(0xFFffffff);
   static const Color cardBg = Color(0xFFB1B1B1);
   static const Color cardShw = Color(0xFFd2d2d2);

@@ -13,6 +13,10 @@ class HeroWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Hero(
         tag: tag,
-        child: Material(type: MaterialType.transparency, child: child),
+        child: Material(
+          type: MaterialType.transparency,
+          child: child,
+          color: Colors.black,
+        ),
       );
 }

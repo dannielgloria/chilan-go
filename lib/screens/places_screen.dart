@@ -1,3 +1,4 @@
+import 'package:app/style/my_colors.dart';
 import 'package:app/widgets/locations_widget.dart';
 import 'package:flutter/material.dart';
 

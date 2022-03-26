@@ -17,7 +17,7 @@ class HappyWidget extends StatelessWidget {
           .map((star) => Container(
                 margin: const EdgeInsets.only(right: 4),
                 child: const Icon(Icons.emoji_emotions,
-                    size: 18, color: Colors.blueGrey),
+                    size: 18, color: Colors.yellow),
               ))
           .toList(),
     );

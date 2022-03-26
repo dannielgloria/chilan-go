@@ -1,5 +1,6 @@
 import 'package:app/data/hero_tag.dart';
 import 'package:app/model/location.dart';
+import 'package:app/style/my_colors.dart';
 import 'package:app/widgets/descriptions_location.dart';
 import 'package:app/widgets/detailed_description_location.dart';
 import 'package:app/widgets/hero_widget.dart';
@@ -22,17 +23,24 @@ class PlaceDetailScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         appBar: AppBar(
           elevation: 0,
-          backgroundColor: Colors.transparent,
-          title: const Text('INTERESTS'),
+          backgroundColor: MyColors.mainBlue,
+          title:
+              const Text('INTERESTS', style: TextStyle(color: MyColors.white)),
           centerTitle: true,
           actions: [
             IconButton(
-              icon: const Icon(Icons.close),
+              icon: const Icon(
+                Icons.close,
+                color: Colors.white,
+              ),
               onPressed: Navigator.of(context).pop,
             ),
             const SizedBox(width: 10)
           ],
-          leading: const Icon(Icons.search_outlined),
+          leading: const Icon(
+            Icons.location_on,
+            color: Colors.white,
+          ),
         ),
         body: Column(
           children: [
@@ -50,6 +58,7 @@ class PlaceDetailScreen extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.all(8),
                     child: LatLongWidget(location: location),
+                    color: Colors.black,
                   ),
                 ],
               ),
