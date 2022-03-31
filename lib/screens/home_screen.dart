@@ -25,11 +25,11 @@ class HomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 IconProgress(
-                  value: '27',
+                  value: '9',
                   iconPath: 'assets/icons/trophy.png',
                 ),
                 IconProgress(
-                  value: '6,514',
+                  value: '725',
                   iconPath: 'assets/icons/bag.png',
                 )
               ],
@@ -38,7 +38,7 @@ class HomePage extends StatelessWidget {
           /*Nivel y progreso*/
           LevelProgressCard(
             size: size,
-            lv: 28,
+            lv: 2,
           ),
           /*Nombre de usuario*/
           Container(
