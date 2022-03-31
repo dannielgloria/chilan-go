@@ -25,11 +25,11 @@ class HomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 IconProgress(
-                  value: '35',
+                  value: '27',
                   iconPath: 'assets/icons/trophy.png',
                 ),
                 IconProgress(
-                  value: '1,507',
+                  value: '6,514',
                   iconPath: 'assets/icons/bag.png',
                 )
               ],
@@ -46,7 +46,7 @@ class HomePage extends StatelessWidget {
             //color: Colors.grey,
             child: Center(
               child: Text(
-                "Joss",
+                "Gabs Segura",
                 style: TextStyle(
                   color: MyColors.mainText,
                   fontSize: 28,
@@ -63,7 +63,7 @@ class HomePage extends StatelessWidget {
             //color: Colors.grey,
             child: Center(
               child: Text(
-                "Rango: Garibaldi",
+                "Rango: FORANEO",
                 style: TextStyle(
                   color: MyColors.mainText,
                   fontSize: 22,
