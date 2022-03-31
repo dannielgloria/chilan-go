@@ -27,7 +27,7 @@ class LevelProgressCard extends StatelessWidget {
             )
           ]),
       width: size.width * 0.8,
-      height: 120,
+      height: 100,
       margin: const EdgeInsets.all(10),
       child: Column(
         children: [
@@ -37,7 +37,7 @@ class LevelProgressCard extends StatelessWidget {
             child: Text(
               "Nivel $lv",
               style: TextStyle(
-                  fontSize: 22,
+                  fontSize: 20,
                   fontFamily: GoogleFonts.lato().fontFamily,
                   color: MyColors.white,
                   decoration: TextDecoration.none),
@@ -52,7 +52,7 @@ class LevelProgressCard extends StatelessWidget {
                   margin: const EdgeInsets.symmetric(horizontal: 10),
                   child: Image.asset(
                     "assets/icons/passport.png",
-                    scale: 1.5,
+                    scale: 2,
                   ),
                 ),
                 Row(
@@ -73,7 +73,7 @@ class LevelProgressCard extends StatelessWidget {
                   margin: EdgeInsets.symmetric(horizontal: 10),
                   child: Image.asset(
                     "assets/icons/suitcase.png",
-                    scale: 1.5,
+                    scale: 2,
                   ),
                 ),
               ],

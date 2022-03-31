@@ -63,7 +63,7 @@ class HomePage extends StatelessWidget {
             //color: Colors.grey,
             child: Center(
               child: Text(
-                "Rango: FORANEO",
+                "Rango: TURISTA",
                 style: TextStyle(
                   color: MyColors.mainText,
                   fontSize: 22,
